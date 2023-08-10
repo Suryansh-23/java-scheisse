@@ -9,7 +9,9 @@ public class Array {
         int[] a = inputArray();
         int[] b = inputArray();
 
-        displayArray(union(a, b));
+        // areSame(a, b);
+        // displayArray(union(a, b));
+        // onlyOdd(a);
     }
 
     public static int[] inputArray() {
@@ -57,5 +59,17 @@ public class Array {
         System.arraycopy(b, 0, c, a.length, b.length);
 
         return c;
+    }
+
+    public static boolean onlyOdd(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                sout.println("no");
+                return false;
+            }
+        }
+
+        sout.println("yes");
+        return true;
     }
 }

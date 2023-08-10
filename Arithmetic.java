@@ -1,10 +1,11 @@
 import java.io.PrintStream;
 import java.util.Scanner;
 
-class Fibonacci {
+class Arithmetic {
+    static PrintStream sout = System.out;
+    static Scanner sin = new Scanner(System.in);
+
     public static void main(String args[]) {
-        Scanner sin = new Scanner(System.in);
-        PrintStream sout = System.out;
         int n = sin.nextInt();
         int a = 0, b = 1;
 

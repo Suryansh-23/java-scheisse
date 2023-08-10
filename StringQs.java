@@ -1,11 +1,15 @@
+import java.io.PrintStream;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class StringQs {
     static Scanner sin = new Scanner(System.in);
+    static PrintStream sout = System.out;
 
     public static void main(String[] args) {
         // hasVowel();
-        isPallindrome();
+        // isPallindrome();
+        distinctChars();
     }
 
     public static void hasVowel() {
@@ -22,7 +26,7 @@ public class StringQs {
                     s.charAt(i) == 'i' ||
                     s.charAt(i) == 'o' ||
                     s.charAt(i) == 'u') {
-                System.out.println("yes");
+                sout.println("yes");
                 return;
             }
         }
@@ -33,11 +37,27 @@ public class StringQs {
 
         for (int i = 0; i < s.length() / 2; i++) {
             if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
-                System.out.println("no");
+                sout.println("no");
                 return;
             }
         }
 
-        System.out.println("yes");
+        sout.println("yes");
+    }
+
+    public static void distinctChars() {
+        String s = sin.nextLine();
+        HashSet<Character> hset = new HashSet<>();
+
+        for (char c : s.toCharArray()) {
+            hset.add(c);
+        }
+
+        sout.print("Distinct Characters: ");
+        for (char c : hset) {
+            sout.printf("%c ", c);
+        }
+
+        sout.printf("\nNo. of distinct characters: %d\n", hset.size());
     }
 }
